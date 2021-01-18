@@ -43,6 +43,9 @@ MinSec operator+(MinSec &minsec1, MinSec &minsec2) {
 int diff(MinSec minsec2, MinSec minsec1) {
   return (minsec1.min * 60 + minsec1.sec) - (minsec2.min * 60 + minsec2.sec);
 }
+int diff(int sec2, MinSec minsec1) {
+  return (minsec1.min * 60 + minsec1.sec) - sec2;
+}
 // int operator-(MinSec &minsec1, MinSec &minsec2) {
 //   return (minsec1.min * 60 + minsec1.sec) - minsec2.min * 60 + minsec2.sec;
 // }
