@@ -26,9 +26,7 @@ class Point {
   int inty;  // y좌표
   int id;    // ID
  public:
-  Point(){
-    cout << "TEST" << endl;
-   };
+  Point() { cout << "TEST" << endl; };
   Point(int x, int y) {
     intx = x;
     inty = y;
@@ -41,9 +39,7 @@ class Point {
   //   intx = point.intx;
   //   inty = point.inty;
   // }
-  ~Point() {
-    cout << "Destructor called (ID="<<id<<")"<<endl;
-  }
+  ~Point() { cout << "Destructor called (ID=" << id << ")" << endl; }
   void InitMembers(int xpos = 0, int ypos = 0) {
     intx = xpos;
     inty = ypos;
@@ -103,26 +99,23 @@ class Rectangle {
     lowRight = Point(0, 0);
   };  // #1b - 두개의 점이 인자로 주어진 생성자.
   Rectangle(Point ul, Point lr) {
-    // upLeft = ul;
-    // lowRight = lr;
-    // id = ++lastId;
-    // cout << "Constructor called with (" << upLeft.GetX() << "," << upLeft.GetY()
-    //      << "), (" << lowRight.GetX() << "," << upLeft.GetY() << ") (ID=" << id
-    //      << ")" << endl;
-    cout << upLeft.GetX() << endl;
+    upLeft = ul;
+    lowRight = lr;
+    id = ++lastId;
+    cout << "Constructor called with (" << upLeft.GetX() << "," << upLeft.GetY()
+         << "), (" << lowRight.GetX() << "," << upLeft.GetY() << ") (ID=" << id
+         << ")" << endl;
   };
   Rectangle(const Rectangle &rect) {
     upLeft = Point(rect.upLeft);
     lowRight = Point(rect.lowRight);
     id = ++lastId;
-    cout << "Copy Constructor called with (" << upLeft.GetX() << "," << upLeft.GetY()
-         << "), (" << lowRight.GetX() << "," << upLeft.GetY() << ") (ID=" << id
-         << ")" << endl;
+    cout << "Copy Constructor called with (" << upLeft.GetX() << ","
+         << upLeft.GetY() << "), (" << lowRight.GetX() << "," << upLeft.GetY()
+         << ") (ID=" << id << ")" << endl;
   }
   // Deconstructor
-  ~Rectangle() {
-    cout << "Destructor called (ID="<<id<<")"<<endl;
-  }
+  ~Rectangle() { cout << "Destructor called (ID=" << id << ")" << endl; }
   void InitMembers(Point &ul, Point &lr) {
     if (ul.GetX() < lr.GetX() && ul.GetY() < lr.GetY()) {
       upLeft = ul;
@@ -149,8 +142,8 @@ int main(void) {
   // Write Here
   Point pt1(10, 20);
   Rectangle a(pt1, Point(30, 40));
-  // Rectangle b(a);
-  // cout << a;
-  // cout << b;
+  Rectangle b(a);
+  cout << a;
+  cout << b;
   return 0;
 }
