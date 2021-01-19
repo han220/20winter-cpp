@@ -56,7 +56,7 @@ class Point {
     return false;
   };
   // #2 - 객체 정보 프린트 하는 함수
-  friend ostream &operator<<(ostream &os, Point &p);
+  friend ostream &operator<<(ostream &os, Point p);
   friend ostream &operator<<(ostream &os, Rectangle &rect);
 
   //#3 - Point 객체 두개를 더하는 연산함수를 friend 함수로 정의하라.
@@ -77,8 +77,8 @@ Point Add_point(Point &p1, Point &p2) {
 }
 
 // #2 - 객체 정보 프린트 하는 함수
-ostream &operator<<(ostream &os, Point &p) {
-  return os << "X좌표: " << p.intx << "Y좌표: " << p.inty;
+ostream &operator<<(ostream &os, Point p) {
+  return os << "X좌표: " << p.intx << " Y좌표: " << p.inty;
 }
 
 class Rectangle {
@@ -134,6 +134,6 @@ int main(void) {
   b.ShowRecInfo();
   cout << a << endl << endl << b << endl;
   Add_point(pt1, pt2);
-  // cout << Add_point(pt1, pt2);
+  cout << Add_point(pt1, pt2);
   return 0;
 }
